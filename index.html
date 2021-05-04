@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Play the Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <body>
+    <div id="mainContainer">
+
+      <!-- referenced W3 Schools: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_indicator -->
+      <div class="progressbar">
+        <div class="progressContainer">
+          <div class="progressMade" id="progressBar"></div>
+        </div>
+      </div>
+      <div class="intro">
+        <h1>Introduce Yourself...</h1>
+        <input data-aos="fade-zoom-in"
+              data-aos-easing="ease-in-back"
+              data-aos-delay="2800"
+              data-aos-offset="0"
+              id="name-input" type="text">
+        <!-- <button id="fortune-button">Get Fortune</button> -->
+        <a data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="3000"
+            data-aos-offset="0"
+            href="#welcome"
+            id="button1">
+          <p>Continue>></p>
+        </a>
+      </div>
+      <div id="welcome">
+        <img src="img.jpg" alt="friend">
+        <div id="welcomeMessage">
+          <div id="diff" class="characterName">
+            <h2>Friend</h2>
+            <a data-aos="fade-zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-delay="500"
+                data-aos-offset="0"
+                href="#instructions">
+              <p>Continue>></p>
+            </a>
+          </div>
+          <p id="outputText1"></p>
+        </div>
+      </div>
+      <div id="instructions">
+        <h1>Instructions:</h1>
+        <p id="instructionsText1">Read each player's description and give a rating.</p>
+        <p id="instructionsText2">How you rate them is completely up to you, but remember</p>
+        <p id="instructionsText3">that you'll receive a rating from them too! Your rating starts at fifty.</p>
+        <p id="instructionsText4">After you finish all the rounds, you'll get an average</p>
+        <p id="instructionsText5">score and your social status in the city. Best of luck!</p>
+        <a data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="500"
+            data-aos-offset="0"
+            href="#level1">
+          <p>Continue>></p>
+        </a>
+      </div>
+
+      <div id="level1">
+        <div class="ratings">
+          <div class="ratingThem">
+            <h1>Give a Rating</h1>
+            <input id="number-input1" type="number">
+            <button id="rate1">
+              Rate Them
+            </button>
+            <p>(The rating should be an integer between 1-100)</p>
+          </div>
+          <div class="yourRating">
+            <h1>They rated you...</h1>
+            <div id="yours1" class="yours">
+              <p id="rated1"></p>
+            </div>
+            <div class="continue" id="continue">
+              <a data-aos="fade-zoom-in"
+                  data-aos-easing="ease-in-back"
+                  data-aos-delay="500"
+                  data-aos-offset="0"
+                  href="#level2">
+                <p>Continue>></p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="impression">
+          <div class="characterName">
+            <h2>Neighbor</h2>
+            <p id="action1"></p>
+          </div>
+          <div class="traits">
+            <div class="t1">
+          <p>Current Rating: 45</p>
+          <p>You Noticed That They:</p>
+          <ul>
+            <li>love to exercise</li>
+            <li>are a dog-lover</li>
+            <li>always liter</li>
+          </ul>
+        </div>
+        <div class="t2">
+          <p>Most People See Them As:</p>
+          <ul>
+            <li>extremely generous</li>
+            <li>sometimes unreliable</li>
+            <li>usually daring</li>
+            <li>not very funny</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+      </div>
+
+      <div id="level2">
+        <div class="ratings">
+          <div class="ratingThem">
+            <h2>Give a Rating</h2>
+            <input id="number-input2" type="number">
+            <button id="rate2">
+              Rate Them
+            </button>
+            <p>(The rating should be an integer between 1-100)</p>
+          </div>
+          <div class="yourRating">
+            <h2>They rated you...</h2>
+            <div id="yours2" class="yours">
+              <p id="rated2"></p>
+            </div>
+            <div class="continue" id="continue2">
+              <a data-aos="fade-zoom-in"
+                  data-aos-easing="ease-in-back"
+                  data-aos-delay="500"
+                  data-aos-offset="0"
+                  href="#level3">
+                <p>Continue>></p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="impression">
+          <div class="characterName">
+            <h2>Co-Worker</h2>
+            <p id="action2"></p>
+          </div>
+          <div class="traits">
+            <div class="t1">
+          <p>Current Rating: 80</p>
+          <p>You Noticed That They:</p>
+          <ul>
+            <li>are very positive</li>
+            <li>always wave back</li>
+            <li>take all the office cookies</li>
+          </ul>
+        </div>
+        <div class="t2">
+          <p>Most People See Them As:</p>
+          <ul>
+            <li>extremely productive</li>
+            <li>sometimes grouchy</li>
+            <li>usually optimistic</li>
+            <li>not very stressed</li>
+          </ul>
+        </div>
+        </div>
+        </div>
+      </div>
+
+      <div id="level3">
+        <div class="ratings">
+          <div class="ratingThem">
+            <h3>Give a Rating</h3>
+            <input id="number-input3" type="number">
+            <button id="rate3">
+              Rate Them
+            </button>
+            <p>(The rating should be an integer between 1-100)</p>
+          </div>
+          <div class="yourRating">
+            <h3>They rated you...</h3>
+            <div id="yours3" class="yours">
+              <p id="rated3"></p>
+            </div>
+            <div class="continue" id="continue3">
+              <a data-aos="fade-zoom-in"
+                  data-aos-easing="ease-in-back"
+                  data-aos-delay="500"
+                  data-aos-offset="0"
+                  href="#level4">
+                <p id="alert1">Continue>></p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="impression">
+          <div class="characterName">
+            <h2>Acquaintance</h2>
+            <p id="action3"></p>
+          </div>
+          <div class="traits">
+            <div class="t1">
+          <p>Current Rating: 90</p>
+          <p>You Noticed That They:</p>
+          <ul>
+            <li>tend to ignore you</li>
+            <li>only reach out for favors</li>
+            <li>never let you pet their cat</li>
+          </ul>
+        </div>
+        <div class="t2">
+          <p>Most People See Them As:</p>
+          <ul>
+            <li>extremely successful</li>
+            <li>sometimes condescending</li>
+            <li>usually insightful</li>
+            <li>not very patient</li>
+          </ul>
+        </div>
+        </div>
+        </div>
+    </div>
+
+      <div id="level4">
+        <div class="ratings">
+          <div class="ratingThem">
+            <h1>Give a Rating</h1>
+            <input id="number-input4" type="number">
+            <button id="rate4">
+              Rate Them
+            </button>
+            <p>(The rating should be an integer between 1-100)</p>
+          </div>
+          <div class="yourRating">
+            <h1>They rated you...</h1>
+            <div id="yours4" class="yours">
+              <p id="rated4"></p>
+            </div>
+            <div class="continue" id="continue4">
+              <a data-aos="fade-zoom-in"
+                  data-aos-easing="ease-in-back"
+                  data-aos-delay="500"
+                  data-aos-offset="0"
+                  href="#level5">
+                <p>Continue>></p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="impression">
+          <div class="characterName">
+            <h2>Stranger</h2>
+            <p id="action4"></p>
+          </div>
+          <div class="traits">
+            <div class="t1">
+          <p>Current Rating: 20</p>
+          <p>You Noticed That They:</p>
+          <ul>
+            <li>seem kind</li>
+            <li>seem genuine</li>
+            <li>is conscientious</li>
+          </ul>
+        </div>
+        <div class="t2">
+          <p>Most People See Them As:</p>
+          <ul>
+            <li>extremely unsocial</li>
+            <li>sometimes awkward</li>
+            <li>usually average</li>
+            <li>not very special</li>
+          </ul>
+        </div>
+        </div>
+        </div>
+    </div>
+
+      <div id="level5">
+        <div class="ratings">
+          <div class="ratingThem">
+            <h2>Give a Rating</h2>
+            <input id="number-input5" type="number">
+            <button id="rate5">
+              Rate Them
+            </button>
+            <p>(The rating should be an integer between 1-100)</p>
+          </div>
+          <div class="yourRating">
+            <h2>They rated you...</h2>
+            <div id="yours5" class="yours">
+              <p id="rated5"></p>
+            </div>
+            <div class="continue" id="continue5">
+              <a data-aos="fade-zoom-in"
+                  data-aos-easing="ease-in-back"
+                  data-aos-delay="500"
+                  data-aos-offset="0"
+                  href="#level6">
+                <p>Continue>></p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="impression">
+          <div class="characterName">
+            <h2>Influencer</h2>
+            <p id="action5"></p>
+          </div>
+          <div class="traits">
+            <div class="t1">
+          <p>Current Rating: 95</p>
+          <p>You Noticed That They:</p>
+          <ul>
+            <li>are very charismatic</li>
+            <li>have a charming persona</li>
+            <li>can be rude at times</li>
+          </ul>
+        </div>
+        <div class="t2">
+          <p>Most People See Them As:</p>
+          <ul>
+            <li>extremely dedicated</li>
+            <li>sometimes a narcissist</li>
+            <li>usually a role model</li>
+            <li>not very typical</li>
+          </ul>
+        </div>
+        </div>
+        </div>
+    </div>
+
+      <div id="level6">
+        <div class="ratings">
+          <div class="ratingThem">
+            <h3>Give a Rating</h3>
+            <input id="number-input6" type="number">
+            <button id="rate6">
+              Rate Them
+            </button>
+            <p>(The rating should be an integer between 1-100)</p>
+          </div>
+          <div class="yourRating">
+            <h3>They rated you...</h3>
+            <div id="yours6" class="yours">
+              <p id="rated6"></p>
+            </div>
+            <div class="continue" id="continue6">
+              <a data-aos="fade-zoom-in"
+                  data-aos-easing="ease-in-back"
+                  data-aos-delay="500"
+                  data-aos-offset="0"
+                  href="#end">
+                <p>Continue>></p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="impression">
+          <div class="characterName">
+            <h2>Friend</h2>
+            <p id="action6"></p>
+          </div>
+          <div class="traits">
+            <div class="t1">
+          <p>Current Rating: 30</p>
+          <p>You Noticed That They:</p>
+          <ul>
+            <li>are a loyal friend</li>
+            <li>are very considerate</li>
+            <li>love your pets</li>
+          </ul>
+        </div>
+        <div class="t2">
+          <p>Most People See Them As:</p>
+          <ul>
+            <li>extremely reliable</li>
+            <li>sometimes blunt</li>
+            <li>usually talkative</li>
+            <li>not very sympathetic</li>
+          </ul>
+        </div>
+        </div>
+        </div>
+    </div>
+
+
+      <div id="end">
+        <div id="totalScore">
+          <h1>Average Score:</h1>
+          <h2 id="finalscoreoutputText"></h2>
+        </div>
+        <h3>Status: Still Human ¯\_(ツ)_/¯</h3>
+        <h5>(Oops, clickbaited)</h5>
+        <h4>What influenced how you rated?</h4>
+      </div>
+    </div>
+
+    <script src="script.js" charset="utf-8"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  </body>
+</html>

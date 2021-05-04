@@ -1,0 +1,564 @@
+@font-face {
+  src: url(Codec-Cold-ExtraBold-trial.ttf);
+  font-family: CExtraBold;
+}
+
+@font-face {
+  src: url(Codec-Cold-News-trial.ttf);
+  font-family: CRegular;
+}
+
+@font-face {
+  src: url(Codec-Cold-Regular-trial.ttf);
+  font-family: CMedium;
+}
+
+@font-face {
+  src: url(Codec-Cold-Bold-trial.ttf);
+  font-family: CBold;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow: hidden;
+  background-color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* progress indicator */
+.progressbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.progressContainer {
+  /* ending bar width */
+  width: 100%;
+  /* bar color for parts before progress is made */
+  background: rgb(20,20,20);
+}
+
+.progressMade {
+  /* bar height */
+  height: 8px;
+  /* progress bar color */
+  background: linear-gradient(90deg, rgba(194,238,255,1) 5%, rgba(232,198,255,1) 50%, rgba(252,200,232,1) 95%);
+  /* initial bar width */
+  width: 0%;
+}
+
+
+/* section1 */
+.intro {
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.intro h1 {
+  font-family: CExtraBold;
+  border-right: solid 3px;
+  -webkit-background-clip: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-shadow: 0px 0px 7px white;
+  margin-bottom: .5em;
+
+/* Reference Website for Animation Code: https://www.codesdope.com/blog/article/12-creative-css-and-javascript-text-typing-animati/ */
+  /* gradient text */
+  background-image: linear-gradient(90deg, rgba(0,150,209,1) 5%, rgba(173,67,243,1) 50%, rgba(219,44,150,1) 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 7vw;
+
+  /* animation */
+  animation: animated-text 2s steps(21,end) 1s 1 normal both,
+             animated-cursor 700ms steps(21,end) infinite;
+}
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 10.5em;}
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor{
+  from{border-image: linear-gradient(90deg, rgba(138,186,205,1) 5%, rgba(192,149,221,1) 50%, rgba(215,132,183,1) 95%) 2;}
+  to{border-image: none;}
+}
+
+.intro input {
+  background-image: linear-gradient(90deg, rgba(194,238,255,1) 5%, rgba(232,198,255,1) 50%, rgba(252,200,232,1) 95%);
+  border-radius: 10px;
+  height: 2.5em;
+  width: 50vw;
+  box-shadow: 0px 0px 7px white;
+  text-align: center;
+  color: rgb(70,70,70);
+  font-family: CMedium;
+  font-size: 1.25em;
+  padding: 0vw;
+}
+
+.intro input::selection {
+  background: rgba(20,20,20,0.8);
+  color: rgb(225,225,225);
+}
+
+.intro a:link{
+  margin-top: 1.25em;
+  color: rgb(200,200,200);
+  font-family: CRegular;
+  text-decoration: none;
+  font-size: 2vw;
+}
+
+.intro a:visited{
+  margin-top: 1em;
+  color: rgb(200,200,200);
+  font-family: CRegular;
+  text-decoration: none;
+  font-size: 1.3em;
+}
+
+.intro a:hover {
+  color: white;
+  text-shadow: 0px 0px 10px white;
+}
+
+/* section2 */
+#welcome {
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+#welcome img{
+  height: 70vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+#welcomeMessage {
+  height: 30vh;
+  width: 100%;
+  background-image: linear-gradient(90deg, rgba(216,239,249,1) 9%, rgba(246,233,255,1) 54%, rgba(250,233,244,1) 95%);
+}
+
+#welcomeMessage p {
+  padding: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  font-size: 2vw;
+  color: rgb(70,70,70);
+}
+
+.characterName {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  background-image: linear-gradient(90deg, rgba(194,238,255,1) 5%, rgba(232,198,255,1) 50%, rgba(252,200,232,1) 95%);
+}
+
+#diff {
+  justify-content: space-between;
+}
+
+.characterName a:link{
+  color: rgb(70,70,70);
+  margin-right: 1em;
+  font-family: CBold;
+  text-decoration: none;
+  font-size: 1.3vw;
+}
+
+.characterName a:visited{
+  color: rgb(70,70,70);
+  font-family: CBold;
+  text-decoration: none;
+  font-size: 1.3vw;
+}
+
+.characterName a:hover {
+  color: rgb(70,70,70);
+  text-shadow: 0px 0px 10px white;
+}
+
+
+/* instructions */
+#instructions {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#instructions h1 {
+  font-family: CExtraBold;
+  border-right: solid 3px;
+  -webkit-background-clip: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-shadow: 0px 0px 7px white;
+  margin-bottom: .3em;
+
+/* Reference Website for Animation Code: https://www.codesdope.com/blog/article/12-creative-css-and-javascript-text-typing-animati/ */
+  /* gradient text */
+  background-image: linear-gradient(90deg, rgba(0,150,209,1) 5%, rgba(173,67,243,1) 50%, rgba(219,44,150,1) 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 7vw;
+}
+
+#instructionsText1 {
+  font-family: CRegular;
+  border-right: solid 3px;
+  -webkit-background-clip: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-shadow: 0px 0px 7px white;
+  margin-bottom: .5em;
+
+/* Reference Website for Animation Code: https://www.codesdope.com/blog/article/12-creative-css-and-javascript-text-typing-animati/ */
+  /* gradient text */
+  background-image: linear-gradient(90deg, rgba(0,150,209,1) 5%, rgba(173,67,243,1) 50%, rgba(219,44,150,1) 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5vw;
+}
+
+#instructionsText2 {
+  font-family: CRegular;
+  border-right: solid 3px;
+  -webkit-background-clip: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-shadow: 0px 0px 7px white;
+  margin-bottom: .5em;
+
+/* Reference Website for Animation Code: https://www.codesdope.com/blog/article/12-creative-css-and-javascript-text-typing-animati/ */
+  /* gradient text */
+  background-image: linear-gradient(90deg, rgba(0,150,209,1) 5%, rgba(173,67,243,1) 50%, rgba(219,44,150,1) 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5vw;
+}
+
+
+#instructionsText3 {
+  font-family: CRegular;
+  border-right: solid 3px;
+  -webkit-background-clip: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-shadow: 0px 0px 7px white;
+  margin-bottom: 1.5em;
+
+/* Reference Website for Animation Code: https://www.codesdope.com/blog/article/12-creative-css-and-javascript-text-typing-animati/ */
+  /* gradient text */
+  background-image: linear-gradient(90deg, rgba(0,150,209,1) 5%, rgba(173,67,243,1) 50%, rgba(219,44,150,1) 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5vw;
+}
+
+#instructionsText4 {
+  font-family: CRegular;
+  border-right: solid 3px;
+  -webkit-background-clip: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-shadow: 0px 0px 7px white;
+  margin-bottom: .5em;
+
+/* Reference Website for Animation Code: https://www.codesdope.com/blog/article/12-creative-css-and-javascript-text-typing-animati/ */
+  /* gradient text */
+  background-image: linear-gradient(90deg, rgba(0,150,209,1) 5%, rgba(173,67,243,1) 50%, rgba(219,44,150,1) 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5vw;
+}
+
+#instructionsText5 {
+  font-family: CRegular;
+  border-right: solid 3px;
+  -webkit-background-clip: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-shadow: 0px 0px 7px white;
+  margin-bottom: .5em;
+
+/* Reference Website for Animation Code: https://www.codesdope.com/blog/article/12-creative-css-and-javascript-text-typing-animati/ */
+  /* gradient text */
+  background-image: linear-gradient(90deg, rgba(0,150,209,1) 5%, rgba(173,67,243,1) 50%, rgba(219,44,150,1) 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5vw;
+
+  /* animation */
+  animation: animated-cursor 700ms steps(21,end) infinite;
+}
+
+
+#instructions a:link{
+  margin-top: 1.25em;
+  color: rgb(200,200,200);
+  font-family: CRegular;
+  text-decoration: none;
+  font-size: 2vw;
+}
+
+#instructions a:visited{
+  margin-top: 1em;
+  color: rgb(200,200,200);
+  font-family: CRegular;
+  text-decoration: none;
+  font-size: 1.3em;
+}
+
+#instructions a:hover {
+  color: white;
+  text-shadow: 0px 0px 10px white;
+}
+
+.characterName h2 {
+  font-family: CBold;
+  padding: .5em;
+  padding-left: 1em;
+  color: rgb(70,70,70);
+  font-size: 3vw;
+}
+
+.ratings {
+  display: flex;
+  height: 50vh;
+}
+
+.ratingThem {
+  display: flex;
+  align-items: center;
+  margin-top: 10vh;
+  width: 50vw;
+  flex-direction: column;
+}
+
+.ratingThem h1, .yourRating h1 {
+text-shadow: 0px 0px 7px white;
+margin-bottom: .5em;
+background-image: linear-gradient(90deg, rgba(0,150,209,1) 5%, rgba(0,150,209,1) 95%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-size: 4vw;
+font-family: CBold;
+}
+
+.ratingThem h2, .yourRating h2 {
+text-shadow: 0px 0px 7px white;
+margin-bottom: .5em;
+background-image: linear-gradient(90deg, rgba(173,67,243,1) 5%, rgba(173,67,243,1) 95%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-size: 4vw;
+font-family: CBold;
+}
+
+.ratingThem h3, .yourRating h3 {
+text-shadow: 0px 0px 7px white;
+margin-bottom: .5em;
+background-image: linear-gradient(90deg, rgba(219,44,150,1) 5%, rgba(219,44,150,1) 95%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-size: 4vw;
+font-family: CBold;
+}
+
+.impression {
+  height: 50vh;
+  width: 100%;
+  background-image: linear-gradient(90deg, rgba(216,239,249,1) 9%, rgba(246,233,255,1) 54%, rgba(250,233,244,1) 95%);
+}
+
+.traits {
+  padding: 3em;
+  padding-top: 1em;
+  font-family: sans-serif;
+  font-size: 2vw;
+  display: flex;
+}
+
+ul {
+  padding-left: 3em;
+  padding-top: .5em;
+}
+
+.traits p {
+  margin-top: .5em;
+}
+
+.t1 {
+  width: 50vw;
+}
+
+.t2 {
+  width: 50vw;
+}
+
+button {
+  padding: .75em;
+  font-size: 1em;
+  border-radius: 10px;
+  margin-top: 1em;
+  font-family: CMedium;
+  background-image: linear-gradient(90deg, rgba(194,238,255,1) 5%, rgba(232,198,255,1) 50%, rgba(252,200,232,1) 95%);
+}
+
+input {
+  height: 1.5em;
+}
+
+.ratingThem p {
+  font-family: sans-serif;
+  color: rgb(225,225,225);
+  font-size: .75em;
+  width: 20%;
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+.yourRating p {
+  font-family: sans-serif;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  margin-top: 2vw;
+}
+
+.yourRating {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10vh;
+}
+
+.yours {
+  background-image: linear-gradient(90deg, rgba(194,238,255,1) 5%, rgba(232,198,255,1) 50%, rgba(252,200,232,1) 95%);
+  border-radius: 5px;
+  height: 8.5vw;
+  width: 8.5vw;
+}
+
+.yours p {
+  font-size: 4vw;
+}
+
+.continue{
+  display: none;
+  margin-top: .5em;
+}
+
+.continue a:link{
+  color: rgb(225,225,225);
+  margin-right: 1em;
+  font-family: CBold;
+  text-decoration: none;
+  font-size: 1vw;
+}
+
+.continue a:visited{
+  color: rgb(225,225,225);
+  font-family: CBold;
+  text-decoration: none;
+  font-size: 1vw;
+}
+
+.continue a:hover {
+  color: rgb(225,225,225);
+  font-family: CBold;
+  text-decoration: none;
+  font-size: 1vw;
+  text-shadow: 0px 0px 10px white;
+}
+
+.impression .characterName p {
+  font-family: CMedium;
+  font-size: 2vw;
+}
+
+/* level heights */
+#level1 {
+  height: 100vh;
+}
+
+#level2 {
+  height: 100vh;
+}
+
+#level3 {
+  height: 100vh;
+}
+
+#level4 {
+  height: 100vh;
+}
+
+#level5 {
+  height: 100vh;
+}
+
+#level6 {
+  height: 100vh;
+}
+
+#end {
+  height: 100vh;
+  background: linear-gradient(90deg, rgba(194,238,255,1) 5%, rgba(232,198,255,1) 50%, rgba(252,200,232,1) 95%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#end h1 {
+  font-family: CExtraBold;
+  font-size: 4.5vw;
+}
+
+#end h2 {
+  font-family: sans-serif;
+  font-size: 4vw;
+  text-align: center;
+}
+
+#end h3 {
+  font-family: CExtraBold;
+  font-size: 3vw;
+  margin-top: 1em;
+}
+
+#end h4 {
+  font-family: CRegular;
+  font-size: 3vw;
+  margin-top: .5em;
+}
+
+#end h5 {
+  font-family: CRegular;
+  font-size: 1vw;
+}
