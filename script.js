@@ -17,7 +17,7 @@ let outputParagraph2;
 let outputDiv2;
 let inputElement2;
 let randomNeighborThing = ["— ran over your cat", "— helped you bring in groceries", "— watched your dog while you were gone", "— crashed into your car", "— destroyed your garden"]
-let randomCoworkerThing = ["— spilled coffee on your papers", "— secretly distributes candy during meetings", "— took credit for your work"];
+let randomCoworkerThing = ["— spilled coffee on your papers", "— secretly distributes candy during meetings", "— took credit for your work", "— carried the group project"];
 let randomAThing = ["— spread rumors about you", "— stole one of your cats", "— insulted your cat", "— glared at your cat"];
 let randomSThing = ["— helped you pick up when fell", "— returned the wallet you dropped", "— found your lost cat"];
 let randomIThing = ["— ignored you", "— called security on you"];
@@ -91,13 +91,14 @@ let currentRate3;
 let currentRate4;
 let currentRate5;
 let currentRate6;
-
+let currentInputText4;
+let currentInputText5;
 
 function input () {
 let currentInputText = inputElement.value;
 let hi = "Hi "
 let rating = " thirty";
-let message1 = ", welcome to the Citytopia! Life here can be easy, just don't do anything crazy. As long as you can keep your rating above";
+let message1 = ", welcome to Citytopia! Life here can be easy, just don't do anything crazy. As long as you can keep your rating above";
 let message2 = ", you'll probably be comfortable. Ninety or higher and you could be living the life. See you around!";
 
 outputDiv.style.fontFamily = "CMedium";
@@ -128,13 +129,20 @@ function input1 () {
 let currentInputText1 = inputElement1.value;
 var theirRating1;
 
-if (currentInputText1 >80) {
-  theirRating1 = Math.floor (Math.random() * 20 + 80);
-} else if (currentInputText1 >50 && currentInputText1 <= 80) {
-  theirRating1 = Math.floor (Math.random() * 30 + 50);
-}
-  else {
-  theirRating1 = Math.floor (Math.random() * 40);
+if (currentInputText1 >=90) {
+  theirRating1 = Math.floor (Math.random() * 10 + 90); //90-100 if you rate 90-100
+} else if (currentInputText1 >=80 && currentInputText1 < 90) {
+  theirRating1 = Math.floor (Math.random() * 10 + 80); //80-90 if you rate 80-89
+} else if (currentInputText1 >=70 && currentInputText1 < 80) {
+  theirRating1 = Math.floor (Math.random() * 10 + 70); //70-80 if you rate 70-79
+} else if (currentInputText1 >=60 && currentInputText1 < 70) {
+  theirRating1 = Math.floor (Math.random() * 10 + 60); //60-70 if you rate 60-69
+} else if (currentInputText1 >=50 && currentInputText1 < 60) {
+  theirRating1 = Math.floor (Math.random() * 10 + 50); //50-60 if you rate 50-59
+} else if (currentInputText1 >=40 && currentInputText1 < 50) {
+  theirRating1 = Math.floor (Math.random() * 10 + 40); //40-50 if you rate 40-49
+} else {
+  theirRating1 = Math.floor (Math.random() * 30); //0-30 if you rate 0-39
 }
 
   outputParagraph1.innerText = theirRating1;
@@ -149,20 +157,27 @@ var theirRating2;
 
 let before = currentRate1;
 
-if (currentInputText2 >80) {
-  theirRating2 = Math.floor (Math.random() * 20 + 70);
-} else if (currentInputText2 >50 && currentInputText2 <= 80) {
-  theirRating2 = Math.floor (Math.random() * 30 + 40);
-}
-  else {
-  theirRating2 = Math.floor (Math.random() * 30);
+if (currentInputText2 >=90) {
+  theirRating2 = Math.floor (Math.random() * 20 + 80); //80-100 if you rate 90-100
+} else if (currentInputText2 >=80 && currentInputText2 < 90) {
+  theirRating2 = Math.floor (Math.random() * 10 + 70); //70-80 if you rate 80-89
+} else if (currentInputText2 >=70 && currentInputText2 < 80) {
+  theirRating2 = Math.floor (Math.random() * 10 + 60); //60-70 if you rate 70-79
+} else if (currentInputText2 >=60 && currentInputText2 < 70) {
+  theirRating2 = Math.floor (Math.random() * 10 + 50); //50-60 if you rate 60-69
+} else if (currentInputText2 >=50 && currentInputText2 < 60) {
+  theirRating2 = Math.floor (Math.random() * 10 + 40); //40-50 if you rate 50-59
+} else if (currentInputText2 >=40 && currentInputText2 < 50) {
+  theirRating2 = Math.floor (Math.random() * 10 + 30); //30-40 if you rate 40-49
+} else {
+  theirRating2 = Math.floor (Math.random() * 20); //0-20 if you rate 0-39
 }
 
   outputParagraph2.innerText = theirRating2;
 
   randomEvent1 = Math.floor (Math.random()*50);
 
-  alert("Someone saw your social media and gave you a rating of " + randomEvent1 +".");
+  alert("NOTIFICATION: Someone saw your social media and gave you a rating of " + randomEvent1 +".");
 
   currentRate2 = Math.floor ((before*2 + randomEvent1 + theirRating2)/4);
   document.getElementById("continue2").style.display = "block";
@@ -184,17 +199,16 @@ var theirRating3;
 
 let before = currentRate2;
 
-if (currentInputText3 >80) {
-  theirRating3 = Math.floor (Math.random() * 20 + 60);
-} else if (currentInputText3 >50 && currentInputText3 <= 80) {
-  theirRating3 = Math.floor (Math.random() * 30 + 30);
-}
-  else {
-  theirRating3 = Math.floor (Math.random() * 20);
+if (currentInputText3 >=70) {
+  theirRating3 = Math.floor (Math.random() * 30 + 40); //40-70 if you rate 70-100
+} else if (currentInputText3 >=40 && currentInputText3 < 70) {
+  theirRating3 = Math.floor (Math.random() * 20 + 20); //20-40 if you rate 40-69
+} else {
+  theirRating3 = Math.floor (Math.random() * 20); //0-20 if you rate 0-39
 }
 
   outputParagraph3.innerText = theirRating3;
-  currentRate3 = Math.floor ((before*3 + theirRating3)/4);
+  currentRate3 = Math.floor ((before*4 + theirRating3)/5);
   document.getElementById("continue3").style.display = "block";
   console.log(currentRate3);
 }
@@ -213,20 +227,20 @@ one=Math.floor (Math.random()*30);
 two=Math.floor (Math.random()*30);
 three=Math.floor (Math.random()*30);
 
-if (currentInputText4 >55) {
-  theirRating4 = Math.floor (Math.random() * 60 + 40);
+if (currentInputText4 >=55) {
+  theirRating4 = Math.floor (Math.random() * 25 + 75); //75-100 if you rate 55-100
   alert("A group of passerbys were unsettled by the interaction and gave you ratings of "+ one+", "+two+", and "+three);
   outputParagraph4.innerText = theirRating4;
-  currentRate4 = Math.floor (((before*4+one+two+three) + theirRating4)/8);
-} else if (currentInputText4 >50 && currentInputText4 <= 55) {
-  theirRating4 = Math.floor (Math.random() * 60 + 30);
+  currentRate4 = Math.floor (((before*5+one+two+three) + theirRating4)/9);
+} else if (currentInputText4 >=40 && currentInputText4 < 55) {
+  theirRating4 = Math.floor (Math.random() * 30 + 50); //50-80 if you rate 40-54
   outputParagraph4.innerText = theirRating4;
-  currentRate4 = Math.floor ((before*4 + theirRating4)/5);
+  currentRate4 = Math.floor ((before*5 + theirRating4)/6);
 }
   else {
-  theirRating4 = Math.floor (Math.random() * 60+20);
+  theirRating4 = Math.floor (Math.random() * 10+30); // 30-40 if you rate 0-39
   outputParagraph4.innerText = theirRating4;
-  currentRate4 = Math.floor ((before*4 + theirRating4)/5);
+  currentRate4 = Math.floor ((before*5 + theirRating4)/6);
 }
 
   document.getElementById("continue4").style.display = "block";
@@ -251,16 +265,23 @@ one=Math.floor (Math.random()*30);
 two=Math.floor (Math.random()*30);
 three=Math.floor (Math.random()*30);
 
-if (currentInputText5 >=65) {
-  theirRating5 = Math.floor (Math.random() * 50);
+if (currentInputText5 >=65 && currentInputText4 >=55) {
+  theirRating5 = Math.floor (Math.random() * 50); //0-50 if you rate 65-100
   outputParagraph5.innerText = theirRating5;
-  currentRate5 = Math.floor ((before*5 + theirRating5)/6);
-}
-  else {
-  theirRating5 = Math.floor (Math.random() * 30);
+  currentRate5 = Math.floor ((before*9 + theirRating5)/10);
+} else if (currentInputText5 >=65 && currentInputText4 <55) {
+  theirRating5 = Math.floor (Math.random() * 50); //0-50 if you rate 65-100
+  outputParagraph5.innerText = theirRating5;
+  currentRate5 = Math.floor ((before*6 + theirRating5)/7);
+} else if (currentInputText5 <65 && currentInputText4 >=55) {
+  theirRating5 = Math.floor (Math.random() * 20); //0-20 if you rate 0-64
+  outputParagraph5.innerText = theirRating5;
+  currentRate5 = Math.floor (((before*9+one+two+three) + theirRating5)/13);
+} else {
+  theirRating5 = Math.floor (Math.random() * 20); //0-20 if you rate 0-64
   alert("fans got upset and gave you ratings of "+ one+", "+two+", and "+three);
   outputParagraph5.innerText = theirRating5;
-  currentRate5 = Math.floor (((before*5+one+two+three) + theirRating5)/9);
+  currentRate5 = Math.floor (((before*6+one+two+three) + theirRating5)/10);
 }
 
   document.getElementById("continue5").style.display = "block";
@@ -281,17 +302,107 @@ var theirRating6;
 
 let before = currentRate5;
 
-if (currentInputText6 >80) {
-  theirRating6 = Math.floor (Math.random() * 10 + 90);
-} else if (currentInputText6 >50 && currentInputText6 <= 80) {
-  theirRating6 = Math.floor (Math.random() * 30 + 50);
+if (currentInputText6 >=90 && currentInputText5 >=65 && currentInputText4 >=55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 90); //90-100 if you rate 90-100
+  currentRate6 = Math.floor ((before*10 + theirRating6)/11);
+} else if (currentInputText6 >=90 && currentInputText5 <65 && currentInputText4 >=55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 90); //90-100 if you rate 90-100
+  currentRate6 = Math.floor ((before*13 + theirRating6)/14);
+} else if (currentInputText6 >=90 && currentInputText5 >=65 && currentInputText4 <55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 90); //90-100 if you rate 90-100
+  currentRate6 = Math.floor ((before*7 + theirRating6)/8);
+} else if (currentInputText6 >=90 && currentInputText5 <65 && currentInputText4 <55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 90); //90-100 if you rate 90-100
+  currentRate6 = Math.floor ((before*10 + theirRating6)/11);
 }
-  else {
-  theirRating6 = Math.floor (Math.random() * 40);
+
+
+
+else if (currentInputText6 >=80 && currentInputText6 < 90 && currentInputText5 >=65 && currentInputText4 >=55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 80); //80-90 if you rate 80-89
+  currentRate6 = Math.floor ((before*10 + theirRating6)/11);
+} else if (currentInputText6 >=80 && currentInputText6 < 90 && currentInputText5 <65 && currentInputText4 >=55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 80); //80-90 if you rate 80-89
+  currentRate6 = Math.floor ((before*13 + theirRating6)/14);
+} else if (currentInputText6 >=80 && currentInputText6 < 90 && currentInputText5 >=65 && currentInputText4 <55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 80); //80-90 if you rate 80-89
+  currentRate6 = Math.floor ((before*7 + theirRating6)/8);
+} else if (currentInputText6 >=80 && currentInputText6 < 90 && currentInputText5 <65 && currentInputText4 <55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 80); //80-90 if you rate 80-89
+  currentRate6 = Math.floor ((before*10 + theirRating6)/11);
+}
+
+else if (currentInputText6 >=70 && currentInputText6 < 80 && currentInputText5 >=65 && currentInputText4 >=55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 70); //70-80 if you rate 70-79
+  currentRate6 = Math.floor ((before*10 + theirRating6)/11);
+} else if (currentInputText6 >=70 && currentInputText6 < 80 && currentInputText5 <65 && currentInputText4 >=55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 70); //70-80 if you rate 70-79
+  currentRate6 = Math.floor ((before*13 + theirRating6)/14);
+} else if (currentInputText6 >=70 && currentInputText6 < 80 && currentInputText5 >=65 && currentInputText4 <55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 70); //70-80 if you rate 70-79
+  currentRate6 = Math.floor ((before*7 + theirRating6)/8);
+} else if (currentInputText6 >=70 && currentInputText6 < 80 && currentInputText5 <65 && currentInputText4 <55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 70); //70-80 if you rate 70-79
+  currentRate6 = Math.floor ((before*10 + theirRating6)/11);
+}
+
+else if (currentInputText6 >=60 && currentInputText6 < 70 && currentInputText5 >=65 && currentInputText4 >=55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 60); //60-70 if you rate 60-69
+  currentRate6 = Math.floor ((before*10 + theirRating6)/11);
+} else if (currentInputText6 >=60 && currentInputText6 < 70 && currentInputText5 <65 && currentInputText4 >=55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 60); //60-70 if you rate 60-69
+  currentRate6 = Math.floor ((before*13 + theirRating6)/14);
+} else if (currentInputText6 >=60 && currentInputText6 < 70 && currentInputText5 >=65 && currentInputText4 <55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 60); //60-70 if you rate 60-69
+  currentRate6 = Math.floor ((before*7 + theirRating6)/8);
+} else if (currentInputText6 >=60 && currentInputText6 < 70 && currentInputText5 <65 && currentInputText4 <55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 60); //60-70 if you rate 60-69
+  currentRate6 = Math.floor ((before*10 + theirRating6)/11);
+}
+
+else if (currentInputText6 >=50 && currentInputText6 < 60 && currentInputText5 >=65 && currentInputText4 >=55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 50); //50-60 if you rate 50-59
+  currentRate6 = Math.floor ((before*10 + theirRating6)/11);
+} else if (currentInputText6 >=50 && currentInputText6 < 60 && currentInputText5 <65 && currentInputText4 >=55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 50); //50-60 if you rate 50-59
+  currentRate6 = Math.floor ((before*13 + theirRating6)/14);
+} else if (currentInputText6 >=50 && currentInputText6 < 60 && currentInputText5 >=65 && currentInputText4 <55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 50); //50-60 if you rate 50-59
+  currentRate6 = Math.floor ((before*7 + theirRating6)/8);
+} else if (currentInputText6 >=50 && currentInputText6 < 60 && currentInputText5 <65 && currentInputText4 <55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 50); //50-60 if you rate 50-59
+  currentRate6 = Math.floor ((before*10 + theirRating6)/11);
+}
+
+else if (currentInputText6 >=40 && currentInputText6 < 50 && currentInputText5 >=65 && currentInputText4 >=55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 40); //40-50 if you rate 40-49
+  currentRate6 = Math.floor ((before*10 + theirRating6)/11);
+} else if (currentInputText6 >=40 && currentInputText6 < 50 && currentInputText5 <65 && currentInputText4 >=55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 40); //40-50 if you rate 40-49
+  currentRate6 = Math.floor ((before*13 + theirRating6)/14);
+} else if (currentInputText6 >=40 && currentInputText6 < 50 && currentInputText5 >=65 && currentInputText4 <55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 40); //40-50 if you rate 40-49
+  currentRate6 = Math.floor ((before*7 + theirRating6)/8);
+} else if (currentInputText6 >=40 && currentInputText6 < 50 && currentInputText5 <65 && currentInputText4 <55) {
+  theirRating6 = Math.floor (Math.random() * 10 + 40); //40-50 if you rate 40-49
+  currentRate6 = Math.floor ((before*10 + theirRating6)/11);
+}
+
+else if (currentInputText6 <40 && currentInputText5 >=65 && currentInputText4 >=55) {
+  theirRating6 = Math.floor (Math.random() * 30); //0-30 if you rate 0-39
+  currentRate6 = Math.floor ((before*10 + theirRating6)/11);
+} else if (currentInputText6 <40 && currentInputText5 <65 && currentInputText4 >=55) {
+  theirRating6 = Math.floor (Math.random() * 30); //0-30 if you rate 0-39
+  currentRate6 = Math.floor ((before*13 + theirRating6)/14);
+} else if (currentInputText6 <40 && currentInputText5 >=65 && currentInputText4 <55) {
+  theirRating6 = Math.floor (Math.random() * 30); //0-30 if you rate 0-39
+  currentRate6 = Math.floor ((before*7 + theirRating6)/8);
+} else {
+  theirRating6 = Math.floor (Math.random() * 30); //0-30 if you rate 0-39
+  currentRate6 = Math.floor ((before*10 + theirRating6)/11);
 }
 
   outputParagraph6.innerText = theirRating6;
-  currentRate6 = Math.floor ((before*2 + theirRating6)/3);
   document.getElementById("continue6").style.display = "block";
   console.log(currentRate6);
 
